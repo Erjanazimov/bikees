@@ -1,14 +1,12 @@
 import React from 'react';
 import {registerChange} from "../../store/authorizationSlice";
 import {useDispatch, useSelector} from "react-redux";
-import {registerFetch} from "../../store/registerSlice";
 
 const Register = () => {
     const dispatch = useDispatch();
     const registerState = useSelector(state => state.authorization.register);
 
     const registerBtnUser = (event) => {
-        dispatch(registerFetch(registerState))
         event.preventDefault();
     };
 

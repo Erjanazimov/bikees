@@ -2,41 +2,9 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {loginChange} from "../../store/authorizationSlice";
 import Register from "./Register";
-import {loginFetch} from "../../store/loginSlice";
 
 
 const Authorization = () => {
-    const entrance = React.createRef();
-    const register = React.createRef()
-    const entranceRef = React.createRef();
-    const registerRef = React.createRef();
-    const loginState = useSelector(state => state.authorization.login);
-    const dispatch = useDispatch();
-
-    const entranceBtn = (e) => {
-        register.current.classList.add("d-none");
-        entrance.current.classList.remove("d-none")
-        entrance.current.classList.add("d-block");
-        e.target.classList.add("active_modal");
-        registerRef.current.classList.remove("active_modal")
-    }
-
-    const registerBtn = (e) => {
-        entrance.current.classList.add("d-none");
-        register.current.classList.remove("d-none")
-        register.current.classList.add("d-block");
-        e.target.classList.add("active_modal");
-        entranceRef.current.classList.remove("active_modal")
-    }
-
-    const loginHandler = (name, e) => {
-        dispatch(loginChange({[name]:e}))
-    }
-
-    const loginBtn = (event) => {
-        dispatch(loginFetch(loginState))
-        event.preventDefault()
-    }
 
     return (
         <div>
